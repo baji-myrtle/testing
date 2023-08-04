@@ -25,6 +25,3 @@ jobs:
       id: precommit
     - name: Upload pre-commit changes
       if: failure() && steps.precommit.outcome == 'failure'
-      uses: rhaschke/upload-git-patch-action@main
-      with:
-        name: pre-commit

@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - name: Build and push the image
-          run:
-            docker login --username baji-myrlte --password ${{ secrets.GH_PAT }} ghcr.io
-            docker build . --tag ghcr.io/baji-myrtle/hello-world-ghcr:latest
-            docker push ghcr.io/baji-myrtle/hello-world-ghcr:latest
+        name: Check out code
+      - uses: mr-simithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: hello-world-ghcr:latest
+          registry: ghcr.io
+          username: baji-myrtle
+          password: ${{ secrets.GH_PAT }}

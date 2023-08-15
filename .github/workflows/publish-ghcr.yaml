@@ -12,7 +12,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
         with:
-          image: hello-world-ghcr:latest
+          image: hello-world-ghcr
           registry: ghcr.io
           username: baji-myrtle
           password: ${{ secrets.GH_PAT }}

@@ -13,6 +13,8 @@ jobs:
         name: Build & push Docker image
         with:
           image: hello-world-ghcr
+          tags: v1, latest
+          enableBuildKit: true
           registry: ghcr.io
           username: baji-myrtle
           password: ${{ secrets.GH_PAT }}

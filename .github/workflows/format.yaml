@@ -3,6 +3,8 @@
 
 name: Formatting (pre-commit)
 
+run-name: ${{ github.actor }} is raised a PR
+
 on:
   workflow_dispatch:
   pull_request:
